@@ -37,7 +37,7 @@ jobs:
             goos: darwin
           - goarch: 386
             goos: openbsd
-        include:
+        #include:
           # BEIGIN MacOS ARM64
           #- goos: darwin
           #  goarch: arm64
@@ -59,8 +59,8 @@ jobs:
           # END Android ARM 8
           # BEGIN Other architectures
           # BEGIN riscv64 & ARM64
-          - goos: linux
-            goarch: arm64
+          #- goos: linux
+          #  goarch: arm64
           #- goos: linux
           #  goarch: riscv64
           # END riscv64 & ARM64
