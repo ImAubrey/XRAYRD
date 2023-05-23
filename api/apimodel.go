@@ -47,6 +47,15 @@ type NodeInfo struct {
 	Header            json.RawMessage
 	NameServerConfig  []*conf.NameServerConfig
 	EnableREALITY     bool
+	Show              bool     `mapstructure:"Show"`
+	Dest              string   `mapstructure:"Dest"`
+	ProxyProtocolVer  uint64   `mapstructure:"ProxyProtocolVer"`
+	ServerNames       []string `mapstructure:"ServerNames"`
+	PrivateKey        string   `mapstructure:"PrivateKey"`
+	MinClientVer      string   `mapstructure:"MinClientVer"`
+	MaxClientVer      string   `mapstructure:"MaxClientVer"`
+	MaxTimeDiff       uint64   `mapstructure:"MaxTimeDiff"`
+	ShortIds          []string `mapstructure:"ShortIds"`
 }
 
 type UserInfo struct {

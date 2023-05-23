@@ -186,21 +186,21 @@ func InboundBuilder(config *Config, nodeInfo *api.NodeInfo, tag string) (*core.I
 
 	// Build TLS and REALITY settings
 	if nodeInfo.EnableREALITY {
-		dest, err := json.Marshal(config.REALITYConfigs.Dest)
+		dest, err := json.Marshal(nodeInfo.Dest)
 		if err != nil {
 			return nil, fmt.Errorf("marshal dest %s config fialed: %s", dest, err)
 		}
 		streamSetting.Security = "reality"
 		streamSetting.REALITYSettings = &conf.REALITYConfig{
-			Show:         config.REALITYConfigs.Show,
+			Show:         nodeInfo.Show,
 			Dest:         dest,
-			Xver:         config.REALITYConfigs.ProxyProtocolVer,
-			ServerNames:  config.REALITYConfigs.ServerNames,
-			PrivateKey:   config.REALITYConfigs.PrivateKey,
-			MinClientVer: config.REALITYConfigs.MinClientVer,
-			MaxClientVer: config.REALITYConfigs.MaxClientVer,
-			MaxTimeDiff:  config.REALITYConfigs.MaxTimeDiff,
-			ShortIds:     config.REALITYConfigs.ShortIds,
+			Xver:         nodeInfo.ProxyProtocolVer,
+			ServerNames:  nodeInfo.ServerNames,
+			PrivateKey:   nodeInfo.PrivateKey,
+			MinClientVer: nodeInfo.MinClientVer,
+			MaxClientVer: nodeInfo.MaxClientVer,
+			MaxTimeDiff:  nodeInfo.MaxTimeDiff,
+			ShortIds:     nodeInfo.ShortIds,
 		}
 	} else if nodeInfo.EnableTLS && config.CertConfig.CertMode != "none" {
 		streamSetting.Security = "tls"
