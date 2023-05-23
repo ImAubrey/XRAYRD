@@ -44,6 +44,7 @@ type v2ray struct {
 		MaxTimeDiff      uint64           `mapstructure:"MaxTimeDiff"`
 		ShortIds         []string         `mapstructure:"ShortIds"`
 		EnableREALITY    bool             `mapstructure:"EnableREALITY"`
+		EnableVless      bool             `mapstructure:"EnableVless"`
 	} `json:"networkSettings"`
 	Tls int `json:"tls"`
 }
