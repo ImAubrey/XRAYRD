@@ -34,17 +34,17 @@ type v2ray struct {
 		Headers          *json.RawMessage `json:"headers"`
 		ServiceName      string           `json:"serviceName"`
 		Header           *json.RawMessage `json:"header"`
-		Show             bool             `mapstructure:"Show"`
-		Dest             string           `mapstructure:"Dest"`
-		ProxyProtocolVer uint64           `mapstructure:"ProxyProtocolVer"`
-		ServerNames      []string         `mapstructure:"ServerNames"`
-		PrivateKey       string           `mapstructure:"PrivateKey"`
-		MinClientVer     string           `mapstructure:"MinClientVer"`
-		MaxClientVer     string           `mapstructure:"MaxClientVer"`
-		MaxTimeDiff      uint64           `mapstructure:"MaxTimeDiff"`
-		ShortIds         []string         `mapstructure:"ShortIds"`
-		EnableREALITY    bool             `mapstructure:"EnableREALITY"`
-		EnableVless      bool             `mapstructure:"EnableVless"`
+		Show             bool             `json:"Show"`
+		Dest             string           `json:"Dest"`
+		ProxyProtocolVer uint64           `json:"ProxyProtocolVer"`
+		ServerNames      []string         `json:"ServerNames"`
+		PrivateKey       string           `json:"PrivateKey"`
+		MinClientVer     string           `json:"MinClientVer"`
+		MaxClientVer     string           `json:"MaxClientVer"`
+		MaxTimeDiff      uint64           `json:"MaxTimeDiff"`
+		ShortIds         []string         `json:"ShortIds"`
+		EnableREALITY    bool             `json:"EnableREALITY"`
+		EnableVless      bool             `json:"EnableVless"`
 	} `json:"networkSettings"`
 	Tls int `json:"tls"`
 }
